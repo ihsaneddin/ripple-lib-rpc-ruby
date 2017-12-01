@@ -9,7 +9,7 @@ module Ripple
 
     def connection
       options = {
-        headers: {'Accept' => "application/json; charset=utf-8", 'User-Agent' => user_agent},
+        headers: {'Accept' => "application/json; charset=utf-8", "Content-Type" => "application/json", 'User-Agent' => user_agent},
         url: endpoint
       }
 

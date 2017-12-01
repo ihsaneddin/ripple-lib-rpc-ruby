@@ -1,9 +1,10 @@
 module Ripple
   class Response
-    attr_accessor :resp
+    attr_accessor :resp, :raw
 
     def initialize(response_hash)
       self.resp = response_hash.result
+      self.raw = response_hash
     end
 
     def success?
