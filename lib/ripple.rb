@@ -11,7 +11,10 @@ require File.expand_path('../ripple/extensions/federation', __FILE__)
 require File.expand_path('../ripple/abstract', __FILE__)
 require File.expand_path('../ripple/request', __FILE__)
 require File.expand_path('../ripple/response', __FILE__)
-require File.expand_path('../ripple/methods/account, __FILE__')
+require File.expand_path('../ripple/methods/account', __FILE__)
+require File.expand_path('../ripple/methods/ledger', __FILE__)
+require File.expand_path('../ripple/methods/transaction', __FILE__)
+require File.expand_path('../ripple/methods/utils', __FILE__)
 # require File.expand_path('../ripple/websocket', __FILE__)
 
 module Ripple
