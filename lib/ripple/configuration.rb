@@ -11,7 +11,8 @@ module Ripple
       :user_agent,
       :endpoint,
       :adapter,
-      :connection_type
+      :connection_type,
+      :default_ripple_lib_server
     ].freeze
 
     # By default, don't set an account
@@ -26,6 +27,8 @@ module Ripple
     DEFAULT_ENDPOINT = nil
 
     DEFAULT_CONNECTION = 'RPC'
+
+    DEFAULT_RIPPLE_LIB_SERVER = '127.0.0.1:52134'
 
     # The adapter that will be used to connect if none is set
     #

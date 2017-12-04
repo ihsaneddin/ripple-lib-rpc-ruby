@@ -16,7 +16,7 @@ module Ripple
           begin
             d = {
               headers: {'Accept' => "application/json; charset=utf-8", "Content-Type" => "application/json", 'User-Agent' => user_agent},
-              url: "https://faucet.altnet.rippletest.net/accounts"
+              url: "http://localhost:52134/addresses"
             }
             conn = Faraday::Connection.new(d) do |co|
               co.use FaradayMiddleware::Mashify
