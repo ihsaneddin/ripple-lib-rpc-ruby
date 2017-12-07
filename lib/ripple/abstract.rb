@@ -49,6 +49,10 @@ module Ripple
       submit_transaction(transaction)
     end
 
+    def send_transaction(params={})
+      
+    end
+
     def new_path(params = {})
       Ripple::Model::Path.new(params)
     end

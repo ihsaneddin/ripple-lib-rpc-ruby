@@ -28,7 +28,7 @@ module Ripple
 
     DEFAULT_CONNECTION = 'RPC'
 
-    DEFAULT_RIPPLE_LIB_SERVER = '127.0.0.1:52134'
+    DEFAULT_RIPPLE_LIB_SERVER = '127.0.0.1:5005'
 
     # The adapter that will be used to connect if none is set
     #

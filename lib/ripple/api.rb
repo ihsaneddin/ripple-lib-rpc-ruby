@@ -19,9 +19,11 @@ module Ripple
       Configuration::VALID_OPTIONS_KEYS.each do |key|
         send("#{key}=", options[key])
       end
-      start_node_ripple_lib
     end
 
+    #
+    # for development stage only
+    #
     def start_node_ripple_lib
       unless is_port_open?("127.0.0.1", 52134)
         current_dir = File.dirname(__FILE__).split("/")

@@ -12,6 +12,7 @@ module Ripple
     end
 
     def raise_errors
+      puts raw.inspect
       if resp.status == 'error'
         if resp.error == 'invalidParams'
           raise InvalidParameters

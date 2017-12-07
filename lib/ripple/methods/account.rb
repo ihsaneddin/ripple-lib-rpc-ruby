@@ -11,34 +11,7 @@ module Ripple
       # option 3 : write generate ripple wallet in ruby
       #
       def wallet_propose(opts={})
-        if connection_type == 'RPC'
-          # RPC
-          begin
-            d = {
-              headers: {'Accept' => "application/json; charset=utf-8", "Content-Type" => "application/json", 'User-Agent' => user_agent},
-              url: "http://localhost:52134/addresses"
-            }
-            conn = Faraday::Connection.new(d) do |co|
-              co.use FaradayMiddleware::Mashify
-              co.request :json
-              co.response :json
-              co.use FaradayMiddleware::RaiseHttpException
-              co.adapter(adapter)
-            end
-            response = conn.post
-            # puts response.inspect
-            Response.new(response.body)
-          rescue Faraday::Error::ParsingError
-            # Server unavailable
-            raise ServerUnavailable
-          rescue Faraday::Error::TimeoutError
-            raise Timedout
-          end
-        else
-          # Websocket
-          # options[:command] = method
-          # WebSocket.instance.post(options)
-        end      
+        post_offline("addresses")      
       end
 
       #
