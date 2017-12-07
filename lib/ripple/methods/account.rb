@@ -2,6 +2,10 @@ module Ripple
   module Methods
     module Account
     
+      def wallet_propose opts={}
+        post(:wallet_propose, opts)
+      end
+
       #
       # ATTENTION!
       # this method should be done locally
@@ -10,11 +14,10 @@ module Ripple
       # option 2 : run a node server just to generate wallet with ripple-lib
       # option 3 : write generate ripple wallet in ruby
       #
-      def wallet_propose(opts={})
+      def dev_wallet_propose(opts={})
+        start_node_ripple_lib unless is_port_open?("127.0.0.1", 52134)
         if self.node_ripple_lib
           post_offline("addresses")
-        else
-          post(:wallet_propose, opts)
         end      
       end
 
