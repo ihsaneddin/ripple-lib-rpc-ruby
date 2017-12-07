@@ -11,7 +11,11 @@ module Ripple
       # option 3 : write generate ripple wallet in ruby
       #
       def wallet_propose(opts={})
-        post_offline("addresses")      
+        if self.node_ripple_lib
+          post_offline("addresses")
+        else
+          post(:wallet_propose, opts)
+        end      
       end
 
       #

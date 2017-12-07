@@ -12,6 +12,7 @@ module Ripple
     
     # @private
     attr_accessor *Configuration::VALID_OPTIONS_KEYS
+    attr_accessor :node_ripple_lib
 
     # Creates a new API
     def initialize(options = {})
@@ -32,6 +33,7 @@ module Ripple
         current_dir = current_dir.join('/')
         system("cd #{current_dir} && node server.js &> /dev/null")
       end
+      self.node_ripple_lib= true
     end
 
     def is_port_open?(ip="127.0.0.1", port)
