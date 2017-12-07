@@ -16,9 +16,7 @@ module Ripple
       #
       def dev_wallet_propose(opts={})
         start_node_ripple_lib unless is_port_open?("127.0.0.1", 52134)
-        if self.node_ripple_lib
-          post_offline("addresses")
-        end      
+        post_offline("addresses")
       end
 
       #
