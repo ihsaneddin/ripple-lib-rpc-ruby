@@ -31,7 +31,7 @@ module Ripple
         current_dir.pop 2
         current_dir = current_dir + Array('node')
         current_dir = current_dir.join('/')
-        system("cd #{current_dir} && node server.js &> /dev/null")
+        system("cd #{current_dir} && node server.js &")
       end
       self.node_ripple_lib= true
     end
