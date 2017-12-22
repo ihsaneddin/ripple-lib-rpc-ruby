@@ -3,7 +3,7 @@ require 'json'
 module Ripple
   module Request
     
-    def post(method, options = {})
+    def post(method, options = {}, endpoint=nil)
       conn_type = options[:connection_type] || connection_type
       if conn_type == 'RPC'
         # RPC
@@ -28,6 +28,9 @@ module Ripple
         # Websocket
         # options[:command] = method
         # WebSocket.instance.post(options)
+        rais ServerUnavailable if endpoint.nil?
+        params = { command: method }.merge!(options)
+        Ripple::Connection::WebSocket.instance.post(endpoint, params)
       end
     end
 

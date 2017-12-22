@@ -51,21 +51,21 @@ module Ripple
               issuer: opts.delete(:account) || client_account
           }
         }.merge!(opts)
-        post(:path_find, params.merge!(subcommand: "create", connection_type: "WebSocket"))
+        post(:path_find, params.merge!(subcommand: "create", connection_type: "WebSocket"), self.websocket_endpoint)
       end
 
       #
       # The close subcommand of path_find instructs the server to stop sending information about the current open pathfinding request.
       #
-      def path_find_close
-        post(:path_find, {subcommand: "close", connection_type: "WebSocket"})
+      def path_find_close(opts={})
+        post(:path_find, opts.merge!(subcommand: "close", connection_type: "WebSocket"), self.websocket_endpoint)
       end
 
       #
       # The status subcommand of path_find requests an immediate update about the client's currently-open pathfinding request.
       #
-      def path_find_status
-        post(:path_find, { subcommand: "status", connection_type: "WebSocket"})
+      def path_find_status(opts={})
+        post(:path_find, opts.merge(subcommand: "status", connection_type: "WebSocket"), self.websocket_endpoint)
       end
 
       #

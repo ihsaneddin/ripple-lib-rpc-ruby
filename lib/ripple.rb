@@ -15,7 +15,7 @@ require File.expand_path('../ripple/methods/account', __FILE__)
 require File.expand_path('../ripple/methods/ledger', __FILE__)
 require File.expand_path('../ripple/methods/transaction', __FILE__)
 require File.expand_path('../ripple/methods/utils', __FILE__)
-# require File.expand_path('../ripple/websocket', __FILE__)
+require File.expand_path('../ripple/websocket', __FILE__)
 
 module Ripple
   extend Configuration

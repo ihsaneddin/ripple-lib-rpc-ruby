@@ -10,6 +10,7 @@ module Ripple
       :client_secret,
       :user_agent,
       :endpoint,
+      :websocket_endpoint,
       :adapter,
       :connection_type,
       :default_ripple_lib_server
@@ -25,6 +26,8 @@ module Ripple
     DEFAULT_USER_AGENT = "Ripple Ruby Gem #{Ripple::VERSION}".freeze
 
     DEFAULT_ENDPOINT = '127.0.0.1:5005'
+
+    DEFAULT_WEBSOCKET_ENDPOINT = 'ws://127.0.0.1:6006'
 
     DEFAULT_CONNECTION = 'RPC'
 
@@ -63,6 +66,7 @@ module Ripple
       self.endpoint              = DEFAULT_ENDPOINT
       self.adapter               = DEFAULT_ADAPTER
       self.connection_type       = DEFAULT_CONNECTION
+      self.websocket_endpoint    = DEFAULT_WEBSOCKET_ENDPOINT
     end
   end
 end
